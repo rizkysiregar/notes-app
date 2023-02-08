@@ -25,13 +25,15 @@ const addNoteHandler = (request, h) => {
         },
       });
       response.code(201);
+      response.header('Access-Control-Allow-Origin', '*');
       return response;
     }
     const response = h.response({
       status: 'fail',
       message: 'Catatan gagal ditambahkan',
-    });
+    });s
     response.code(500);
+    response.header('Access-Control-Allow-Origin', '*');
     return response;
   };
 
